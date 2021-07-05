@@ -1,6 +1,47 @@
 <resources>
     <string name="app_name">My Anime Schedule</string>
-    <string name="title_home">Home</string>
-    <string name="title_dashboard">Dashboard</string>
+    <string name="title_home">Schedule</string>
+    <string name="title_watching">Watching</string>
     <string name="title_notifications">Notifications</string>
+    <string name="drawer_desc">Pixeled hokusai</string>
+    <string name="about">About</string>
+
+    <string name="no_data_available">Nothing to show.</string>
+    <string name="no_data_available_watching">It\'s lonely in here. Why don\'t you start watching something?</string>
+    <string name="loading_issues">Issues loading schedule.</string>
+    <string name="loading_issues_watching">Issues loading watching list</string>
+    <string name="not_latest_version">Could not retrieve latest version from server.</string>
+    <string name="episodes_text">ep</string>
+    <string name="episodes_long_text">Episodes</string>
+    <string name="score_text">Score</string>
+    <string name="rating_text">Rating</string>
+    <string name="duration_text">Duration</string>
+    <string name="unfollow_button_text">Unfollow</string>
+    <string name="airing_on_text">Airing On</string>
+    <string name="notification_msg">"It's now airing!"</string>
+    <string name="anime_image_desc">Anime poster</string>
+    <string name="watching_icon">An eye representing a currently watching anime</string>
+
+
+    <string name="menu_filter">Filter</string>
+    <string name="mon">Monday</string>
+    <string name="tue">Tuesday</string>
+    <string name="wed">Wednesday</string>
+    <string name="thu">Thursday</string>
+    <string name="fri">Friday</string>
+    <string name="sat">Saturday</string>
+    <string name="sun">Sunday</string>
+
+    <string name="about_text">
+        My Anime Schedule is a simple app to help you keeping up with the world of anime!\n\n
+        Many anime are aired every week and it can be difficult to keep up with all the good series,
+        so wouldn\'t be nice to have a friendly reminder when your favorite show starts?\n\n
+        With My Anime Schedule this becomes pretty simple: in your home page, you can filter what
+        anime get aired daily (starting from today). You can then see more infos by clicking on one
+        of them. Then, if its description gets your interest, you can click on the watch icon to be
+        notified when a new episode it\'s airing.\n\n
+        And if you get bored of an anime, you can just unfollow it!\n\n
+        Pretty simple, huh?\n\n
+        Everything was implemented with best practices in mind, and you can find more on https://github.com/AurSoft
+    </string>
 </resources>

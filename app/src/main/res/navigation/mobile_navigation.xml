@@ -9,17 +9,45 @@
         android:id="@+id/navigation_home"
         android:name="website.aursoft.myanimeschedule.ui.home.HomeFragment"
         android:label="@string/title_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_navigation_home_to_animeDetails"
+            app:destination="@id/animeDetails"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/slide_out_right"
+            app:popUpTo="@id/navigation_home" />
+        <action
+            android:id="@+id/navigate_to_about"
+            app:destination="@id/aboutFragment" />
+    </fragment>
 
     <fragment
-        android:id="@+id/navigation_dashboard"
-        android:name="website.aursoft.myanimeschedule.ui.dashboard.DashboardFragment"
-        android:label="@string/title_dashboard"
-        tools:layout="@layout/fragment_dashboard" />
+        android:id="@+id/navigation_watching"
+        android:name="website.aursoft.myanimeschedule.ui.watching.WatchingFragment"
+        android:label="@string/title_watching"
+        tools:layout="@layout/fragment_watching" >
+        <action
+            android:id="@+id/action_navigation_watching_to_animeDetails"
+            app:destination="@id/animeDetails"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/slide_out_right"
+            app:popUpTo="@id/navigation_watching" />
+        <action
+            android:id="@+id/navigate_to_about"
+            app:destination="@id/aboutFragment" />
+    </fragment>
 
     <fragment
-        android:id="@+id/navigation_notifications"
-        android:name="website.aursoft.myanimeschedule.ui.notifications.NotificationsFragment"
-        android:label="@string/title_notifications"
-        tools:layout="@layout/fragment_notifications" />
+        android:id="@+id/animeDetails"
+        android:name="website.aursoft.myanimeschedule.ui.AnimeDetailsFragment"
+        android:label="AnimeDetails" >
+        <argument
+            android:name="selectedAnime"
+            app:argType="website.aursoft.myanimeschedule.data.Anime"
+            />
+    </fragment>
+    <fragment
+        android:id="@+id/aboutFragment"
+        android:name="website.aursoft.myanimeschedule.ui.about.AboutFragment"
+        android:label="AboutFragment" />
 </navigation>

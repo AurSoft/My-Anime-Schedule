@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="website.aursoft.myanimeschedule.ui.AnimeDetailsViewModel" />
+    </data>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <androidx.constraintlayout.motion.widget.MotionLayout
+            android:id="@+id/constraintLayout"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layoutDescription="@xml/fragment_details_xml_constraintlayout_scene">
+
+
+            <ImageView
+                android:id="@+id/animeImage"
+                android:layout_width="177dp"
+                android:layout_height="231dp"
+                android:layout_marginTop="@dimen/margin_normal"
+                android:layout_marginEnd="@dimen/margin_large"
+                android:contentDescription="@string/anime_image_desc"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:remoteImage="@{viewModel.selectedAnime.imageUrl}"
+                tools:srcCompat="@drawable/no_image" />
+
+            <androidx.constraintlayout.widget.Barrier
+                android:id="@+id/barrier3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:barrierDirection="bottom"
+                app:constraint_referenced_ids="animeImage,animeScoreText,episodesText,episodesNumber"
+                tools:layout_editor_absoluteX="319dp"
+                tools:layout_editor_absoluteY="16dp" />
+
+            <TextView
+                android:id="@+id/animeTitle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_normal"
+                android:layout_marginTop="@dimen/margin_normal"
+                android:layout_marginEnd="@dimen/margin_normal"
+                android:gravity="center"
+                android:text="@{viewModel.selectedAnime.title}"
+                android:textColor="@color/red_accent_700"
+                android:textSize="@dimen/text_size_very_large"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/animeImage"
+                tools:text="One Piece" />
+
+            <TextView
+                android:id="@+id/episodesText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_normal"
+                android:layout_marginTop="@dimen/margin_normal"
+                android:layout_marginEnd="@dimen/margin_normal"
+                android:text="@string/episodes_text"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_small"
+                app:layout_constraintEnd_toStartOf="@+id/animeImage"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/animeScoreNumber" />
+
+            <TextView
+                android:id="@+id/animeScoreText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_normal"
+                android:layout_marginTop="@dimen/margin_normal"
+                android:layout_marginEnd="@dimen/margin_normal"
+                android:text="@string/score_text"
+                android:textColor="@color/black"
+                app:layout_constraintEnd_toStartOf="@+id/animeImage"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/animeImage" />
+
+            <TextView
+                android:id="@+id/animeTypeValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_small"
+                android:layout_marginEnd="@dimen/margin_small"
+                android:text="@{viewModel.selectedAnime.type}"
+                android:textColor="@color/red_accent_200"
+                android:textSize="@dimen/text_size_medium"
+                app:layout_constraintBottom_toBottomOf="@+id/episodesNumber"
+                app:layout_constraintEnd_toStartOf="@+id/animeDurationValue"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/episodesNumber"
+                app:layout_constraintTop_toBottomOf="@+id/episodesText"
+                tools:text="TV" />
+
+            <TextView
+                android:id="@+id/animeScoreNumber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/red_accent_200"
+                android:textSize="@dimen/text_size_large"
+                app:layout_constraintEnd_toEndOf="@+id/animeScoreText"
+                app:layout_constraintStart_toStartOf="@+id/animeScoreText"
+                app:layout_constraintTop_toBottomOf="@+id/animeScoreText"
+                app:numberText="@{viewModel.selectedAnime.score}"
+                tools:text="9.8" />
+
+            <androidx.constraintlayout.widget.Barrier
+                android:id="@+id/barrier4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:barrierDirection="bottom"
+                app:constraint_referenced_ids="animeTitle,animeScoreNumber,broadcastText,broadcastLocalText"
+                tools:layout_editor_absoluteY="328dp" />
+
+            <TextView
+                android:id="@+id/broadcastText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_normal"
+                android:layout_marginTop="@dimen/margin_normal"
+                android:text="@{viewModel.selectedAnime.broadcast}"
+                android:textColor="@color/black"
+                app:layout_constraintStart_toEndOf="@+id/airingDetailsText"
+                app:layout_constraintTop_toBottomOf="@+id/animeTitle"
+                tools:text="Mondays at 00:00 (JST)" />
+
+            <TextView
+                android:id="@+id/broadcastLocalText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_normal"
+                android:text="@{viewModel.selectedAnime.broadcastLocal}"
+                android:textColor="@color/black"
+                app:layout_constraintStart_toStartOf="@+id/broadcastText"
+                app:layout_constraintTop_toBottomOf="@+id/broadcastText"
+                tools:text="Sundays at 00:00 (system)" />
+
+            <TextView
+                android:id="@+id/airingDetailsText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_normal"
+                android:text="@string/airing_on_text"
+                android:textColor="@color/black"
+                app:layout_constraintBottom_toBottomOf="@+id/broadcastLocalText"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/broadcastText" />
+
+            <TextView
+                android:id="@+id/episodesNumber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/red_accent_200"
+                android:textSize="@dimen/text_size_large"
+                app:layout_constraintEnd_toStartOf="@+id/animeTypeValue"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="@+id/episodesText"
+                app:layout_constraintTop_toBottomOf="@+id/episodesText"
+                app:numberText="@{viewModel.selectedAnime.episodes}"
+                tools:text="24" />
+
+            <TextView
+                android:id="@+id/ratingText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_normal"
+                android:text="@string/rating_text"
+                android:textColor="@color/black"
+                app:layout_constraintEnd_toEndOf="@+id/episodesText"
+                app:layout_constraintStart_toStartOf="@+id/episodesText"
+                app:layout_constraintTop_toBottomOf="@+id/episodesNumber" />
+
+            <TextView
+                android:id="@+id/ratingValue"
+                android:layout_width="161dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@{viewModel.selectedAnime.rating}"
+                android:textColor="@color/red_accent_200"
+                android:textSize="@dimen/text_size_large"
+                app:layout_constraintEnd_toEndOf="@+id/ratingText"
+                app:layout_constraintStart_toStartOf="@+id/ratingText"
+                app:layout_constraintTop_toBottomOf="@+id/ratingText"
+                tools:text="PG13 - Teens 13 or older" />
+
+            <TextView
+                android:id="@+id/animeDurationValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{viewModel.selectedAnime.duration}"
+                android:textColor="@color/red_accent_200"
+                android:textSize="@dimen/text_size_medium"
+                app:layout_constraintBottom_toBottomOf="@+id/animeTypeValue"
+                app:layout_constraintEnd_toEndOf="@+id/episodesText"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/animeTypeValue"
+                app:layout_constraintTop_toTopOf="@+id/animeTypeValue"
+                tools:text="24 min" />
+
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/watchNewAnime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_normal"
+                android:layout_marginEnd="@dimen/margin_normal"
+                android:clickable="true"
+                android:focusable="true"
+                android:onClick="@{() -> viewModel.watchNewAnime()}"
+                android:visibility="@{viewModel.showFAB}"
+                app:layout_anchorGravity="bottom|right|end"
+                app:layout_constraintBottom_toBottomOf="@+id/broadcastLocalText"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/broadcastText"
+                app:srcCompat="@drawable/watching_24" />
+
+            <TextView
+                android:id="@+id/animeBackground"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_normal"
+                android:layout_marginTop="@dimen/margin_large"
+                android:layout_marginEnd="@dimen/margin_normal"
+                android:layout_marginBottom="@dimen/margin_normal"
+                android:minHeight="@dimen/padding_large"
+                android:text="@{viewModel.selectedAnime.synopsis}"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_normal"
+                app:layout_constraintBottom_toTopOf="@+id/unfollowButton"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/broadcastLocalText"
+                app:layout_constraintVertical_bias="0.0"
+                tools:text="Lorem ipsum sic amet..." />
+
+            <Button
+                android:id="@+id/unfollowButton"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton.Icon"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_normal"
+                android:layout_marginEnd="@dimen/margin_normal"
+                android:layout_marginBottom="@dimen/margin_normal"
+                android:onClick="@{() -> viewModel.unfollowAnime()}"
+                android:text="@string/unfollow_button_text"
+                android:visibility="@{viewModel.showUnfollowButton}"
+                app:icon="@drawable/ic_baseline_remove_24"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+
+        </androidx.constraintlayout.motion.widget.MotionLayout>
+
+    </androidx.core.widget.NestedScrollView>
+</layout>
