@@ -11,10 +11,19 @@
     <dimen name="padding_small">5dp</dimen>
     <dimen name="padding_medium">10dp</dimen>
     <dimen name="padding_large">20dp</dimen>
+    <dimen name="margin_mini">4dp</dimen>
+    <dimen name="margin_extra_small">6dp</dimen>
     <dimen name="margin_small">8dp</dimen>
     <dimen name="margin_normal">16dp</dimen>
     <dimen name="margin_large">32dp</dimen>
     <dimen name="header_height">192dp</dimen>
     <dimen name="header_padding">16dp</dimen>
     <dimen name="header_image_width">100dp</dimen>
+    <dimen name="details_image_width">177dp</dimen>
+    <dimen name="details_image_height">231dp</dimen>
+    <dimen name="about_image_height">166dp</dimen>
+    <dimen name="rating_width">161dp</dimen>
+    <dimen name="anime_item_title_height">28dp</dimen>
+    <dimen name="anime_item_image_width">73dp</dimen>
+    <dimen name="anime_item_image_height">104dp</dimen>
 </resources>

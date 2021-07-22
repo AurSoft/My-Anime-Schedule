@@ -23,8 +23,8 @@
 
             <ImageView
                 android:id="@+id/animeImage"
-                android:layout_width="177dp"
-                android:layout_height="231dp"
+                android:layout_width="@dimen/details_image_width"
+                android:layout_height="@dimen/details_image_height"
                 android:layout_marginTop="@dimen/margin_normal"
                 android:layout_marginEnd="@dimen/margin_large"
                 android:contentDescription="@string/anime_image_desc"
@@ -181,7 +181,7 @@
 
             <TextView
                 android:id="@+id/ratingValue"
-                android:layout_width="161dp"
+                android:layout_width="@dimen/rating_width"
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:text="@{viewModel.selectedAnime.rating}"

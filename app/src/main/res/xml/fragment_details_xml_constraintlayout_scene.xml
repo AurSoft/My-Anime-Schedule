@@ -17,7 +17,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             motion:layout_constraintBottom_toBottomOf="@+id/broadcastLocalText"
-            android:layout_marginEnd="16dp"
+            android:layout_marginEnd="@dimen/margin_normal"
             motion:layout_constraintTop_toTopOf="@+id/broadcastText"
             motion:visibilityMode="ignore" />
         <Constraint
@@ -26,20 +26,20 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             motion:layout_constraintBottom_toBottomOf="parent"
-            android:layout_marginBottom="16dp"
-            android:layout_marginEnd="16dp"
-            android:layout_marginStart="16dp"
+            android:layout_marginBottom="@dimen/margin_normal"
+            android:layout_marginEnd="@dimen/margin_normal"
+            android:layout_marginStart="@dimen/margin_normal"
             motion:layout_constraintStart_toStartOf="parent"
             motion:visibilityMode="ignore" />
         <Constraint
-            android:layout_marginEnd="16dp"
+            android:layout_marginEnd="@dimen/margin_normal"
             android:layout_height="wrap_content"
             android:layout_marginBottom="@dimen/margin_normal"
             motion:layout_constraintBottom_toTopOf="@+id/unfollowButton"
             motion:layout_constraintEnd_toEndOf="parent"
             android:layout_width="match_parent"
             motion:layout_constraintStart_toStartOf="parent"
-            android:layout_marginStart="16dp"
+            android:layout_marginStart="@dimen/margin_normal"
             android:id="@+id/animeBackground" />
     </ConstraintSet>
 
@@ -50,7 +50,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             motion:layout_constraintBottom_toBottomOf="@+id/broadcastLocalText"
-            android:layout_marginEnd="16dp"
+            android:layout_marginEnd="@dimen/margin_normal"
             motion:layout_constraintTop_toTopOf="@+id/broadcastText"
             motion:visibilityMode="ignore" />
         <Constraint
@@ -59,9 +59,9 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             motion:layout_constraintBottom_toBottomOf="parent"
-            android:layout_marginBottom="16dp"
-            android:layout_marginEnd="16dp"
-            android:layout_marginStart="16dp"
+            android:layout_marginBottom="@dimen/margin_normal"
+            android:layout_marginEnd="@dimen/margin_normal"
+            android:layout_marginStart="@dimen/margin_normal"
             motion:layout_constraintStart_toStartOf="parent"
             motion:visibilityMode="ignore" />
     </ConstraintSet>
